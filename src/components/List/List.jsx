@@ -1,11 +1,13 @@
+import ListItem from "../ListItem/ListItem";
+
 export default function List(props) {
   return (
     <>
-      <ul>
+      <div>
         {props.colors.map((color) => (
-          <li key={color.id}>{color.name}</li>
+          <ListItem key={color.id} color={color.name} />
         ))}
-      </ul>
+      </div>
     </>
   );
 }
