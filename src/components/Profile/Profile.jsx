@@ -1,5 +1,6 @@
 import AboutMe from "../AboutMe/AboutMe";
 import List from "../List/List";
+import "./Profile.scss";
 
 export default function Profile() {
   const myInfo = {
@@ -20,14 +21,22 @@ export default function Profile() {
 
   return (
     <>
-      <h1>Profile</h1>
-      <p>Name: {myInfo.name} </p>
-      <p>Location: {myInfo.location}</p>
-      <p>Age: {myInfo.age}</p>
-      <h2>Favorite colors: </h2>
-      <List colors={myInfo.colors} />
-      <h2>About me:</h2>
-      <AboutMe info={myInfo.info} />
+      <div className="c-profile">
+        <h1 className="c-profile__title">Profile</h1>
+        <p>
+          <b>Name:</b> {myInfo.name}{" "}
+        </p>
+        <p>
+          <b>Location:</b> {myInfo.location}
+        </p>
+        <p>
+          <b>Age:</b> {myInfo.age}
+        </p>
+        <h2 className="c-profile__title">Favorite colors: </h2>
+        <List colors={myInfo.colors} />
+        <h2 className="c-profile__title">About me:</h2>
+        <AboutMe info={myInfo.info} />
+      </div>
     </>
   );
 }
